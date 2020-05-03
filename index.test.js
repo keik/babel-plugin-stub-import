@@ -14,7 +14,7 @@ describe("options", () => {
       tr("import a from './b';", undefined);
     }).toThrow();
   });
-  test("should throw error if options `test.importName` is empty", () => {
+  test("should throw error if options `test` is empty", () => {
     expect(() => {
       tr("import a from './b';", { test: {} });
     }).toThrow();
@@ -28,6 +28,14 @@ describe("options", () => {
     expect(() => {
       tr("import a from './b';", {
         test: { importName: "^a$" },
+        stubTo: "c",
+      });
+    }).not.toThrow();
+  });
+  test("should not throw error if options is valid", () => {
+    expect(() => {
+      tr("import a from './b';", {
+        test: { importPath: "\\/components\\/" },
         stubTo: "c",
       });
     }).not.toThrow();
@@ -73,6 +81,18 @@ import a from 'c';`;
     expect(code).toBe(expected);
   });
 
+  test("should be replace when import name matched with named import with rename", () => {
+    const code = tr("import { z as a } from './b';", {
+      test: { importName: "^a$" },
+      stubTo: "c",
+    });
+    const expected = `\
+import './b';
+import a from 'c';`;
+    console.log(code);
+    expect(code).toBe(expected);
+  });
+
   test("should be replace when import name matched from multi import specifiers", () => {
     const code = tr("import remain1, { remain2, a, remain3 } from './b';", {
       test: { importName: "^a$" },
@@ -80,6 +100,19 @@ import a from 'c';`;
     });
     const expected = `\
 import remain1, { remain2, remain3 } from './b';
+import a from 'c';`;
+    expect(code).toBe(expected);
+  });
+
+  test("should be replace when import path matched", () => {
+    const code = tr("import a, { b, c } from '../components/b';", {
+      test: { importPath: "\\/components\\/" },
+      stubTo: "c",
+    });
+    const expected = `\
+import '../components/b';
+import c from 'c';
+import b from 'c';
 import a from 'c';`;
     expect(code).toBe(expected);
   });

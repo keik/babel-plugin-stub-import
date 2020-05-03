@@ -13,7 +13,7 @@ module.exports = function ({ parse }) {
         replace(path, state, importIdentifierName, parse);
       },
       ImportSpecifier(path, state) {
-        const importIdentifierName = path.node.imported.name;
+        const importIdentifierName = path.node.local.name;
         replace(path, state, importIdentifierName, parse);
       },
     },
@@ -58,8 +58,10 @@ function normalizeOptions(opts) {
   rules.forEach((rule) => {
     if (!rule.test)
       throw new Error(`${PLUGIN_NAME}: 'test' option is required`);
-    if (!rule.test.importName)
-      throw new Error(`${PLUGIN_NAME}: 'test.importName' option is required`);
+    if (!rule.test.importName && !rule.test.importPath)
+      throw new Error(
+        `${PLUGIN_NAME}: Either 'test.importName' or 'test.importPath' options is required`
+      );
     if (!rule.stubTo)
       throw new Error(`${PLUGIN_NAME}: 'stubTo' option is required`);
   });
