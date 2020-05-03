@@ -1,0 +1,28 @@
+{
+  "name": "babel-plugin-stub-import",
+  "description": "",
+  "version": "0.0.0",
+  "author": "keik",
+  "bugs": {
+    "url": "https://github.com/keik/babel-plugin-stub-import/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "jest": "^25.5.4",
+    "prettier": "^2.0.5"
+  },
+  "homepage": "https://github.com/keik/babel-plugin-stub-import#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keik/babel-plugin-stub-import.git"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest"
+  }
+}

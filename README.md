@@ -1,1 +1,1 @@
-# babel-plugin-replace-import
+# babel-plugin-stub-import
