@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-stub-import",
-  "description": "",
+  "description": "Test importing variable specifier and filepath, then replace to stub.",
   "version": "0.0.0",
   "author": "keik",
   "bugs": {
@@ -14,6 +14,7 @@
     "jest": "^25.5.4",
     "prettier": "^2.0.5"
   },
+  "files": [],
   "homepage": "https://github.com/keik/babel-plugin-stub-import#readme",
   "license": "ISC",
   "main": "index.js",
