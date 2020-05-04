@@ -34,7 +34,7 @@ module.exports = {
 Input
 
 ```js
-import bar, { foo, baz, foo as qux } from './bar;
+import bar, { foo, baz, foo as qux } from './bar';
 
 foo();
 ```
