@@ -89,7 +89,6 @@ import a from 'c';`;
     const expected = `\
 import './b';
 import a from 'c';`;
-    console.log(code);
     expect(code).toBe(expected);
   });
 
