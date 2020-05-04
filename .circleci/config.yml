@@ -20,7 +20,7 @@ commands:
           command: npm run lint
       - run:
           name: Test
-          command: npm test
+          command: npm test -- --coverage && bash <(curl -s https://codecov.io/bash)
       - save-npm-cache
   save-npm-cache:
     steps:
