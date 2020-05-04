@@ -1,5 +1,10 @@
 # babel-plugin-stub-import
 
+[![npm-version](https://img.shields.io/npm/v/babel-plugin-stub-import.svg?style=flat-square)](https://npmjs.org/package/babel-plugin-stub-import)
+[![downloads](http://img.shields.io/npm/dm/babel-plugin-stub-import.svg?style=flat-square)](https://npmjs.org/package/babel-plugin-stub-import)
+[![circleci](https://img.shields.io/circleci/build/github/keik/babel-plugin-stub-import?style=flat-square)](https://app.circleci.com/pipelines/github/keik/babel-plugin-stub-import)
+[![codecov](https://codecov.io/gh/keik/babel-plugin-stub-import/branch/master/graph/badge.svg)](https://codecov.io/gh/keik/babel-plugin-stub-import)
+
 Test importing variable specifier and filepath, then replace to stub.
 
 ## Limitation
