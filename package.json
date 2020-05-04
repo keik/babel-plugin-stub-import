@@ -16,7 +16,7 @@
   },
   "files": [],
   "homepage": "https://github.com/keik/babel-plugin-stub-import#readme",
-  "license": "ISC",
+  "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",
